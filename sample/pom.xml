@@ -6,17 +6,16 @@
   <version>1.1-SNAPSHOT</version>
   <name>sample</name>
   <url>http://maven.apache.org</url>
-
+  <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
 
    <scm>
    <connection>scm:git:https://github.com/devopss1/demo.git</connection>
    <developerConnection>scm:git:https://github.com/devopss1/demo.git</developerConnection>
      <tag>HEAD</tag>
   </scm>
-  <properties>
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
-  </properties>
    
    <build>
     <plugins>

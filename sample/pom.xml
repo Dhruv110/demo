@@ -13,7 +13,10 @@
    <developerConnection>scm:git:https://github.com/devopss1/demo.git</developerConnection>
      <tag>HEAD</tag>
   </scm>
-   
+  <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
    
    <build>
     <plugins>

@@ -24,7 +24,7 @@ pipeline {
 		stage('Artifact upload'){
 			steps{
 				echo 'Artifact Upload stage'
-				nexusArtifactUploader artifacts: [[artifactId: 'sample', classifier: '', file: '/Users/dhruv/.jenkins/workspace/Demo/sample/target/sample-1.1-SNAPSHOT.jar', type: 'jar']], groupId: 'com.my', nexusUrl: 'localhost:8081/nexus', nexusVersion: 'nexus3', protocol: 'http', repository: 'snapshots', version: '1.1-SNAPSHOT'
+				nexusArtifactUploader artifacts: [[artifactId: 'sample', classifier: '', file: '/Users/dhruv/.jenkins/workspace/Demo/sample/target/sample-1.1-SNAPSHOT.jar', type: 'jar']], groupId: 'com.my', nexusUrl: '127.0.0.1:8081/nexus', nexusVersion: 'nexus3', protocol: 'http', repository: 'snapshots', version: '1.1-SNAPSHOT'
 	    
 			}
 		}

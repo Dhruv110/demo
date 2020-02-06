@@ -7,13 +7,13 @@ pipeline {
 		stage('checkout'){
 			steps{
 				echo 'checkout stage'
-				git 'https://github.com/devopss1/demo.git'
+				git 'https://github.com/Dhruv110/demo.git'
 			}
 		}
 		stage('Build'){
 			steps{
 				echo 'Build stage'
-				sh '/root/test/apache-maven-3.6.3/bin/mvn package -f /root/.jenkins/jobs/myfirstpipeline/workspace/sample/pom.xml'
+				sh '/Users/dhruv/Desktop/DevOps/apache-maven-3.6.3/bin/mvn package -f /Users/dhruv/.jenkins/workspace/Demo/sample/pom.xml'
 			}
 		}
 		stage('Test'){
@@ -24,14 +24,14 @@ pipeline {
 		stage('Artifact upload'){
 			steps{
 				echo 'Artifact Upload stage'
-				nexusArtifactUploader artifacts: [[artifactId: 'sample', classifier: '', file: '/root/.jenkins/jobs/myfirstpipeline/workspace/sample/target/sample-1.1-SNAPSHOT.jar', type: 'jar']], credentialsId: '0e4de5af-4845-4e46-835b-d521bb9c223c', groupId: 'com.my', nexusUrl: '192.168.83.130:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'snapshots', version: '1.1-SNAPSHOT'
+				nexusArtifactUploader artifacts: [[artifactId: 'sample', classifier: '', file: '/Users/dhruv/.jenkins/workspace/Demo/sample/target/sample-1.1-SNAPSHOT.jar', type: 'jar']], groupId: 'com.my', nexusUrl: 'localhost:8081/nexus', nexusVersion: 'nexus3', protocol: 'http', repository: 'snapshots', version: '1.1-SNAPSHOT'
 	    
 			}
 		}
 		stage('Deploy'){
 			steps{
 				echo 'Deploy stage'
-				sh 'cp /root/.jenkins/jobs/myfirstpipeline/workspace/sample/target/sample-1.1-SNAPSHOT.jar  /root/webserver/apache-tomcat-9.0.30/webapps/'
+				sh 'cp /Users/dhruv/.jenkins/workspace/Demo/sample/target/sample-1.1-SNAPSHOT.jar  /Users/dhruv/Desktop/DevOps/apache-tomcat-9.0.30/webapps/'
 			}
 		}
 	

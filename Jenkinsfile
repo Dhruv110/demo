@@ -1,31 +1,20 @@
-pipeline {
-	agent any
-	
-	stages{
-		stage('checkout'){
-			steps{
-				echo 'checkout stage'
-			}
-		}
-		stage('Build'){
-			steps{
-				echo 'Build stage'
-			}
-		}
-		stage('Test'){
-			steps{
-				echo 'Test stage'
-			}
-		}
-		stage('Artifact upload'){
-			steps{
-				echo 'Artifact Upload stage'
-			}
-		}
-		stage('Deploy'){
-			steps{
-				echo 'Deploy stage'
-			}
-		}
-	}
+pipeline { 
+    agent any 
+    stages {
+        stage('Build') { 
+            steps { 
+                echo 'Buiding' 
+            }
+        }
+        stage('Test'){
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'deploying'
+            }
+        }
+    }
 }
